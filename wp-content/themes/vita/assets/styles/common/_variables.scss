@@ -1,0 +1,32 @@
+// Glyphicons font path
+$icon-font-path:        "../fonts/";
+
+// Colors
+$brand-one:#00a3c4;
+$brand-two:#f8b572;
+$brand-three:#5d5d5d;
+$brand-four:#b2b2b2;
+$brand-five:#f5f5f5;
+$brand-six:#808080;
+$brand-seven:#cbcbcb;
+
+$error:#ff0000;
+
+$selectionColor: lighten( $brand-one, 20% );
+
+// Path to images
+// Use #{$assetPath}/
+$assetPath : "../../assets/images";
+
+$gutter: (24px);
+
+/*
+font-family: 'Nunito', sans-serif;
+font-family: 'Lato', sans-serif;
+
+font-family: 'Lato', sans-serif; BODY 400 / 700 / 900
+font-family:"antartidard_esslight", sans-serif; TITLES
+*/
+
+@include font-face("antartidard_esslight", "../../assets/fonts/antartida-rounded-essential-light-webfont");
+@include font-face("antartidard_essbold", "../assets/fonts/antartida-rounded-essential-bold-webfont", bold);

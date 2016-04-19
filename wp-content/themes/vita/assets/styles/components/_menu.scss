@@ -1,0 +1,262 @@
+.fixed-nav {
+	@include bp(desktop) {
+		position:fixed;
+		width:100%;
+		left:0;
+		background:#fff;
+		z-index:9999;
+	}
+}
+.menu-wrapper {
+	position:relative;
+	@include rem(margin-top, 20px);
+	@include bp(tablet) {
+		float:left;
+		@include rem(margin-top, 6px);
+	}
+}
+.menu-wrapper .menu {
+	position:relative;
+	@include remove-default-list-style;
+}
+.menu-wrapper .menu > li {
+	position:relative;
+	top:5px;
+	display:inline-block;
+}
+.menu-wrapper a {
+	position:relative;
+	color:$brand-three;
+	display:inline-block;
+	@include rem(font-size, 16px);
+	@include rem(margin-right, 55px);
+	padding-bottom:24px;
+	text-decoration: none;
+	@include bp(tablet) {
+		@include rem(margin-right, 25px);
+	}
+	@include bp(desktopmed) {
+		@include rem(margin-right, 55px);
+	}
+	&:hover {
+		color:$brand-one;
+	}
+	.arrow {
+		display:none;
+	}
+}
+.menu-wrapper li:last-child  {
+	a {
+		margin-right:0;
+	}
+}
+.menu-wrapper li:hover a {
+	color:$brand-one;
+	.arrow path {
+		fill:$brand-one;
+	}
+}
+.menu-wrapper li:hover a {
+	color:$brand-one;
+	.arrow svg path {
+		fill:#fff;
+	}
+}
+.menu-wrapper li.menu-item-has-children a {
+	.arrow {
+		display:inline-block;
+		@include rem(margin-left, 10px);
+		@include rem(margin-right, 8px);
+	}
+}
+.menu-wrapper a:hover:before {
+	visibility: visible;
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+.menu-wrapper ul.sub-menu {
+	position: absolute;
+	top:100%;
+	left:0;
+	min-width:170px;
+	padding:0;
+	display:none;
+	white-space: nowrap;
+	overflow:hidden;
+	z-index:50;
+	@include transition(all 3.5s);
+}
+
+.menu-wrapper ul.sub-menu li {
+  	text-transform: none;
+	display:block;
+	&:last-child {
+		float:left;
+		width:100%;
+	}
+	a {
+		margin:0;
+		color:#fff;
+		display:block;
+		text-align:left;
+		@include rem(padding, 10px 10px 8px 10px);
+		@include rem(font-size, 13px);
+		background-color:$brand-three;
+		border-bottom:1px solid darken($brand-three, 10%);
+		&:hover {
+			background:$brand-two;
+			border-bottom:1px solid darken($brand-two, 10%);
+		}
+		.arrow {
+			display:none;
+		}
+	}
+}
+
+.menu-wrapper li:hover .sub-menu,
+.menu-wrapper li:target .sub-menu {
+	@include bp(desktop) {
+		display:block;
+		@include transition(all 1s);
+	}
+}
+a.menu-link {
+	position:relative;
+	top:-5px;
+	float:right;
+	width: 37px;
+	height:25px;
+	@include rem(margin, 10px 20px 0 0);
+	z-index:50;
+	@media screen and (min-width: 960px) {
+		display:none;
+		visibility:hidden;
+	}
+}
+
+/* Responsive Menu */
+@media screen and (max-width: 960px) {
+	.js .menu-wrapper nav#menu {
+		overflow:hidden;
+        max-height: 0em;
+	}
+	.js .menu-wrapper nav#menu.active {
+		max-height: 30em;
+        transition: max-height 0.5s;
+	}
+	
+	#menu {
+		width:100%;	
+		&.active {
+			@include rem(margin-bottom, 20px);
+		}
+	}
+	.menu-wrapper {
+		position:relative;
+		width:100%;
+		z-index:40;
+	}
+	.menu-wrapper .menu {
+		margin-top:0;
+	}
+	.menu-wrapper .menu li {
+		position:relative;
+		width:100%;
+		border: none;		
+		a {
+			color:#fff;
+			background:$brand-one;
+			.arrow {
+				display:none;
+			}
+			&:after {
+				display:none;
+			}
+		}
+	}
+	.menu-wrapper .menu > li {
+		padding: 0px;
+		border: none;
+	}
+	.menu-wrapper .menu a {
+		@include rem(padding, 11px 20px 10px 20px);
+		margin: 0px;
+		border: none;
+		display:block;
+		text-align:left;
+		@include rem(font-size, 18px);
+		border-bottom:1px solid darken($brand-one, 20% );
+		&:hover {
+			color:#fff;
+			background:lighten($brand-one, 10% );
+		}
+	}
+	
+	.menu-wrapper .sub-menu {
+		position:relative;
+		width:100%;
+		left:0;
+		display: block;
+		margin:0;
+		&:after {
+			display:none;
+		}
+		li {
+			margin: 0;
+			display: block;
+			width: 100%;
+		}
+	}
+	.menu-wrapper .menu li .sub-menu li a {
+		@include rem(font-size, 16px);
+		@include rem(padding, 15px 20px 13px 20px);
+		background:lighten($brand-one, 10% );
+	}
+	.menu-wrapper .sub-menu.active {
+		display:block;
+		margin:0;
+		overflow: visible;
+		position: relative;
+		z-index: 9;
+	}
+	.menu-wrapper .toggle-link {
+		position: absolute;
+		top:0;
+		right: 0px;
+		width: 37px;
+		height: 37px;
+		display: block;
+		z-index: 200;
+		font-size: 0em;
+		cursor: pointer;
+		background:lighten($brand-one, 10% );
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		&.active {
+			background:lighten($brand-one, 10% );
+		}
+		&:hover {
+			transition: all 0.2s;
+			background:lighten($brand-one, 10% );
+		}
+	} 
+	.menu-wrapper .menu .menu-item-has-children > .toggle-link:after {
+		content: "+";
+		position: absolute;
+		top:50%;
+		left:0;
+		width:37px;
+		height:37px;
+		margin-top:-11px;
+		text-align:center;
+		font-size:20px;
+		color:#fff;
+	}
+	.menu-wrapper .menu .menu-item-has-children > .toggle-link.active:after {
+		content: "-";
+		margin-top: -10px;
+	}
+}

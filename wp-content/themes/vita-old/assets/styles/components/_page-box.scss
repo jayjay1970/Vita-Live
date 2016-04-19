@@ -1,0 +1,198 @@
+.text-with-graphic {
+	@include bp(desktop) {
+		min-height: calc(100vh - 685px);
+		/*@include rem(margin-top, 109px);*/
+	}
+}
+.page-boxes-over-banner {
+	position:relative;
+	@include bp(desktop) {
+		top:-210px;
+	}
+}
+.page-boxes {
+	@include inline-block;
+	@include rem(margin, 30px 0 0 0);
+}
+.page-box {
+	position:relative;
+	@include rem(min-height, 226px);
+	@include rem(padding, 15px 50px);
+	background:rgba(248,181,114,0.9);
+	border-radius:10px;
+	text-align:center;
+	color:$brand-three;
+	@include display(flex);
+	@include flex-direction(column); 
+	@include justify-content(center);
+	vertical-align: middle;
+	@include rem(margin-bottom, 20px);
+	@include bp(desktop) {
+		@include rem(min-height, 226px);
+		margin-bottom:0;
+	}
+	&--blue {
+		background:rgba(0,164,197,0.9);
+	}
+	&--grey {
+		background:rgba(80,80,80,0.9);
+	}
+	&--outline {
+		background:none;
+		border:2px solid $brand-three;
+	}
+	&--offer {
+		border:2px solid $brand-one;
+	}
+	&--quote {
+		text-align:center;
+		@include rem(padding-bottom, 50px);
+		@include bp(tablet) {
+			@include rem(padding-bottom, 15px);
+		}
+	}
+	&--absolute {
+		@include bp(desktop) {
+			position:absolute;
+			bottom:0;
+			left:0;
+			width:100%;
+			z-index:30;
+		}
+	}
+	&__title {
+		color:#fff;
+		display:block;
+		@include rem(font-size, 24px);
+	}
+	&__heading {
+		@include rem(font-size, 21px);
+		font-weight:300;
+		font-family:"antartidard_esslight", sans-serif;
+		@include rem(margin-bottom, 35px);
+	}
+	&__button {
+		font-weight:700;
+	}
+	&__testimonial {
+		color:#fff;
+		@include rem(font-size, 16px);
+		@include rem(margin-top, 10px);
+		@include rem(margin-bottom, 15px);
+	}
+	&__author {
+		color:#fff;
+		text-align:left;
+		@include rem(font-size, 14px);
+	}
+	&__offer-small {
+		color:$brand-one;
+		@include rem(font-size, 18px);
+		font-weight:300;
+		font-family: 'Lato', sans-serif;
+	}
+	&__large {
+		color:$brand-one;
+		@include rem(font-size, 53px);
+		font-weight:600;
+		font-family: 'Lato', sans-serif;
+	}
+	&__subtext {
+		color:$brand-one;
+		@include rem(font-size, 18px);
+		font-weight:300;
+		font-family: 'Lato', sans-serif;
+	}
+	&--video {
+		position:relative;
+		&:after {
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			content:"";
+			border-radius:10px;
+			background:rgba(0,0,0,0.7);
+		}
+	}
+	&--video__title {
+		color:#fff;
+		position:relative;
+		@include rem(margin-top, 5px);
+		z-index:10;
+		@include rem(font-size,24px);
+		font-family:"antartidard_esslight", sans-serif;
+	}
+	&__play {
+		position:relative;
+		z-index:10;
+		@include rem(margin-top, 20px);
+	}
+	&__video-container {
+		display:none;
+	}
+	&:hover .page-box__play svg path {
+		fill:$brand-one;
+	}
+	&__offer-container {
+		display:none;
+	}
+	&--download {
+		@include rem(padding-top, 25px);
+	}
+	&:hover {
+		filter: brightness(85%);
+	}
+}
+/*#feefologohere {
+	width:90px;
+	height:90px;
+	display:block;
+	margin:4px auto 0 auto;
+}*/
+
+.page-box--offer:hover,
+.page-box--download:hover,
+.page-box--quote:hover,
+.page-box--outline:hover {
+	filter: none;
+}
+.pop-up-offer {
+	text-align:center;
+	@include rem(padding, 30px 0);
+	&__offer-small {
+		color:$brand-one;
+		@include rem(font-size, 25px);
+		font-weight:300;
+		font-family: 'Lato', sans-serif;	
+	}
+	&__large {
+		color:$brand-one;
+		@include rem(font-size, 70px);
+		font-weight:600;
+		@include rem(margin, 8px 0);
+		font-family: 'Lato', sans-serif;
+	}
+	&__subtext {
+		color:$brand-one;
+		@include rem(font-size, 25px);
+		font-weight:300;
+		font-family: 'Lato', sans-serif;	
+	}
+}
+.page-box__form-container {
+	display:none;
+	h2 {
+		color:#fff;
+	}
+}
+aside  .page-box { 
+	@include rem(margin-bottom, 20px);
+	@include bp(desktop) {
+	}
+}
+.page-template-template-page-overview .page-box,
+.page-template-template-page-with-sections .page-box {
+	@include rem(margin-bottom, 30px);
+}

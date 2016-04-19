@@ -1,0 +1,38 @@
+.pop-up-download-form form {
+	position:relative;
+	margin:0;
+}
+.pop-up-download-form form input {
+	float:left;
+	width:100%;
+	color:$brand-four;
+	margin-top:2px;
+	@include rem(padding, 8px 15px 5px 15px);
+	background-color:#fff;
+	@include rem(margin-bottom, 10px);
+	@include box-sizing(border-box);
+	text-align:center;
+	@include placeholder {
+		color:$brand-four;
+	}
+}
+.pop-up-download-form form input[type=submit] {
+	width:100%;
+	border:none;
+	color:#fff;
+	background:$brand-one;
+	margin-bottom:0;
+	&:hover {
+		background:darken( $brand-two, 10%);
+	}
+}
+.download-file-link a span span  {
+	@include inline-block;
+	color:#006400;
+	border:2px solid #006400;
+	background:#DFF2BF;
+	border-radius:8px;
+	@include rem(padding, 12px 15px 10px 15px);
+	@include rem(margin, 10px 0 0 0);
+	margin-bottom:0;
+}

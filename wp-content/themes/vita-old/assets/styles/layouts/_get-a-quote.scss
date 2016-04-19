@@ -1,0 +1,86 @@
+.get-a-quote-form {
+	@include rem(margin-top, 40px);
+}
+.get-a-quote {
+	h2 {
+		@include rem(padding-bottom, 13px);
+		border-bottom:2px solid #badce6;
+		@include rem(margin-bottom, 40px);
+	}
+	h3 {
+		color:$brand-one;
+	}
+}
+.form-column-container {
+	&.column-left {
+		@include rem(padding-right, 40px);
+		@include bp(tablet) {
+			@include rem(padding-right, 50px);
+			border-right:2px solid #fff;
+		}
+	}
+}
+.add-relative {
+	position:relative;
+}
+.info-icon {
+	position:absolute;
+	top:50%;
+	right:-30px;
+	width:20px;
+	height:20px;
+	margin-top:-20px;
+	text-align:center;
+	color:#fff;
+	background-color:$brand-one;
+}
+.quote-process {
+	@include rem(padding, 50px 10px 50px 10px);
+	background:$brand-one;
+	h3 {
+		color:#fff;
+		@include rem(font-size, 38px);
+		@include rem(margin-bottom,30px);
+	}
+}
+.process-step {
+	position:relative;
+	@include rem(padding-left, 25px);
+	@include rem(margin-bottom,20px);
+	@include bp(tablet) {
+		margin-bottom:0;
+	}
+	&:before {
+		position:absolute;
+		top:0;
+		left:0;
+	}
+	p {
+		color:#fff;
+		margin-bottom:0;
+	}
+}
+.process-step.step1 {
+	&:before {
+		content:"1.";
+	}
+}
+.process-step.step2 {
+	&:before {
+		content:"2.";
+	}
+}
+.process-step.step3 {
+	&:before {
+		content:"3.";
+	}
+}
+
+.quote-note {
+	@include rem(padding, 50px 10px 20px 10px);
+	text-align:center;
+	color:$brand-one;
+	p {
+		@include rem(margin-bottom, 20px);
+	}
+}

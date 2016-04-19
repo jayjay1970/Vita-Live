@@ -1,0 +1,54 @@
+h2.our-expert-main-title {
+	@include rem(font-size, 38px);
+	@include rem(margin-bottom, 20px);
+}
+.our-expert {
+	@include rem(padding-bottom, 30px);
+	width:99%;
+	@include rem(margin-bottom, 40px);
+	&.post-2 {
+		@include bp(tablet) {
+			float:right;
+		}
+	}
+	&-content {
+		@include rem(margin-top, 30px);
+	}
+	img {
+		@include rem(padding-top, 2px);
+		border-radius:10px;
+	}
+	h3 {
+		color:#fff;
+		@include rem(font-size, 18px);
+		@include rem(line-height, 24px);
+		@include rem(padding-bottom, 8px);
+		border-bottom:2px solid lighten( $brand-one, 5% );
+		@include rem(margin-bottom, 15px);
+		span {
+			color:$brand-three;
+			display:block;
+			@include rem(margin-top, 5px);
+			@include bp(tablet) {
+				display:inline-block;
+				margin-top:0;
+			}
+		}
+	}
+	p {
+		color:#fff;
+	}
+	a {
+		color:$brand-three;
+		display:block;
+		@include rem(padding-top, 15px);
+	}
+}
+.column-border-top {
+	@include rem(padding-top, 30px);
+	border-top:2px solid lighten( $brand-one, 5% );
+	@include rem(margin-bottom, 15px);
+	&.with-accordion {
+		@include rem(padding-top, 17px);
+	}
+}

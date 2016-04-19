@@ -1,0 +1,33 @@
+section.contact-page {
+	h2 {
+		color:#fff;
+		margin:0;
+	}
+}
+.contact-page-button {
+	margin-top:32px;
+}
+.contact-numbers {
+	@include remove-default-list-style;
+	li {
+		float:left;
+		a {
+			color:#fff;
+			@include rem(padding-left, 30px);
+			@include rem(margin-right, 30px);
+			@include svg-bg('phone-icon', $position: center left, $repeat: no-repeat);
+		}
+		&.email a {
+			@include rem(padding-left, 40px);
+			@include svg-bg('envelope-icon', $position: center left, $repeat: no-repeat);
+		}
+	}
+}
+.address {
+	clear:right;
+	@include rem(font-size, 14px);
+	@include rem(margin-top, 45px);
+	@include bp(desktop) {
+		@include rem(margin-top, 35px);
+	}
+}

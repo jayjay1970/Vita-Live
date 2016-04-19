@@ -1,0 +1,128 @@
+.accordion-bar {
+	@include rem(margin-top, 30px);
+	&--inpage {
+		margin:0;
+		@include rem(margin-bottom, 30px);
+	}
+}
+.column-border-top .accordion-bar {
+	margin-top:0;
+}
+.accordion {
+	width:100%;
+	display:inline-block;
+	h3 {
+		position:relative;
+		width:100%;
+		display:inline-block;
+		margin:0;
+		@include rem(padding, 13px 20px 13px 30px);
+		border:none;
+		text-align:left;
+		background:$brand-one;
+		cursor:pointer;
+		margin-bottom:0;
+		color:#fff;
+		@include rem(font-size, 16px);
+		@include rem(line-height, 22px);
+		font-weight:700;
+		border-bottom:2px solid lighten( $brand-one, 5% );
+		span.job-title {
+			color:$brand-three;
+			font-weight:400;
+			display:block;
+			@include bp(tablet) {
+				display:inline-block;
+			}
+		}
+		span.arrow {
+			position:absolute;
+			top:50%;
+			left:0;
+			width:15px;
+			height:13px;
+			margin-top:-6.5px;
+			display:block;
+			@include svg-bg('right-arrow', $repeat: no-repeat);
+			@include transition(all 0.5s ease-in-out);
+		}
+		&.open span.arrow {
+			@include transform(rotate(90deg));
+		}
+	}
+	&:last-child h3 {
+		border-bottom:none;
+	}
+}
+.accordion__content {
+	display:none;
+	@include rem(padding, 15px 0);
+	p {
+		margin-top:0;
+		color:$brand-one;
+		@include rem(margin-bottom, 20px);
+	}
+}
+.page-template-template-page-with-sections .accordion__content {
+	p {
+		color:#fff;
+	}
+}
+
+.accordion-bar--inpage {
+	.accordion {
+		h3 {
+			color:$brand-one;
+			background:none;
+			border-bottom:1px solid lighten( $brand-one, 5% );
+		}
+		span.arrow {
+			@include svg-bg('right-arrow-blue', $repeat: no-repeat);
+		}
+	}
+	.accordion--grey {
+		h3 {
+			color:#fff;
+			background:$brand-four;
+			@include rem(padding, 13px 20px 13px 35px);
+			border-bottom:none;
+			@include rem(margin-bottom, 8px);
+			&.open {
+				margin-bottom:0;
+				background:$brand-three;
+			}
+			&:hover {
+				background:$brand-two;
+			}
+		}
+		span.arrow {
+			margin-left:10px;
+			@include svg-bg('right-arrow', $repeat: no-repeat);
+		}
+		p {
+			color:#fff;
+		}
+		ul {
+			@include rem(margin-bottom, 22px);
+			li {
+				color:$brand-two;
+				&:before {
+					content: '\2022';
+				}
+				strong {
+					font-weight:600;
+				}
+			}
+		}
+	}
+}
+
+.accordion-bar--inpage {
+	.accordion--grey {
+		.accordion__content {
+			@include rem(padding, 20px 20px 10px 35px);
+			background:$brand-three;
+			@include rem(margin-bottom, 8px);
+		}
+	}
+}

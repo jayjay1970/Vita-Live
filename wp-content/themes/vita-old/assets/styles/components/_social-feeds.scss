@@ -1,0 +1,22 @@
+.feed-container {
+	border-top:3px solid #e5e5e5;
+	@include rem(padding-top, 15px);
+	@include rem(margin-top, 75px);
+	@include rem(margin-bottom, 50px);
+	h3 a {
+		color:$brand-six;
+		svg {
+			@include rem(margin-right, 5px);
+		}
+	}
+	p {
+		color:$brand-six;
+	}
+	.tweet_time {
+		color:$brand-four;
+		@include rem(margin-top, 20px);
+	}
+	#cff .cff-post-links a {
+		@include rem(font-size, 14px);
+	}
+}

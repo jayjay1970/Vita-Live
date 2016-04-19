@@ -1,0 +1,35 @@
+.sharethis {
+	@include inline-block;
+	@include rem(padding, 10px 15px);
+	@include rem(margin-bottom, 20px);
+	border-radius:10px;
+	border:1px solid $brand-one;
+}
+.addthis_sharing_toolbox {
+	float:left;
+}
+.slideout-trigger {
+	float:left;
+	width:24px;
+	height:21px;
+	@include rem(margin-right, 10px);
+	@include svg-bg('share-door', $repeat: no-repeat);
+}
+.share-text {
+	float:left;
+	color:$brand-one;
+	@include rem(margin-right, 10px);
+	margin-bottom:0;
+	@include rem(font-size, 18px);
+	font-family:"antartidard_esslight", sans-serif;
+}
+.slide-out-buttons {
+	float:left;
+	display:none;
+	width: calc(100% - 34px);
+	height:21px;
+	@include rem(margin-top, 2px);
+	span {
+		margin:0;
+	}
+}

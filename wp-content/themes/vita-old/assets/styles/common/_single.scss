@@ -1,0 +1,9 @@
+.single {
+	section {
+		h3 {
+			color:$brand-one;
+			@include rem(font-size, 34px);
+			@include rem(margin, 20px 0);
+		}
+	}
+}

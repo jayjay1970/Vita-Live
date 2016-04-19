@@ -1,0 +1,359 @@
+*,
+:before,
+:after {
+	@include box-sizing(border-box);
+}
+html {
+	position:relative;
+	min-height: 100%;
+	font-size:14px;
+	@include bp(desktop) {
+		font-size:16px;
+	}
+}
+body {
+	font-size:100%;
+	min-height: 100%;
+	margin:0;
+	color:$brand-three;
+	overflow-x: hidden;
+	font-family: 'Lato', sans-serif;
+	@include appearance(none);
+}
+::-moz-selection {
+    background: $selectionColor;
+    text-shadow: none;
+}
+::selection {
+    background: $selectionColor;
+    text-shadow: none;
+}
+img {
+	max-width:100%;
+}
+.align-left {
+	float:left;
+}
+.align-right {
+	float:right;
+}
+#feefologohere {
+	@include rem(margin-top, 7px);
+}
+.central-list {
+	@include remove-default-list-style;
+	width:100%;
+	margin:0 auto;
+	text-align:center;
+	li {
+		display:inline-block;
+		@include rem(margin, 0 15px 15px 15px);
+		@include bp(tablet) {
+			display:inline;
+			margin-bottom:0;
+		}
+	}
+}
+#wpadminbar {
+	top:-50px;
+	@include bp(tablet) {
+		top:0;
+	}
+}
+.logged-in {
+	margin-top:20px;
+	@include bp(tablet) {
+		margin-top:0;
+	}
+}
+
+.embed-container { 
+	position: relative; 
+	padding-bottom: 56.25%; 
+	height: 0; 
+	overflow: hidden; 
+	max-width: 100%; 
+} 
+.embed-container iframe, .embed-container object, .embed-container embed { 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%; 
+}
+.paddingfix {
+	@include bp(desktop) {
+		padding-left:0;
+	}
+}
+.wrapper {
+	width:90%;
+	margin:0 auto;
+	@include bp(desktop) {
+		min-width: 920px;
+		width: 90%;
+		max-width: 1200px;
+	}
+}
+.acf-map {
+	float:right;
+	width:100%;
+	min-height:380px;
+	@include rem(margin-top, 20px);
+	@include rem(margin-bottom, 18px);
+	@include bp(desktop) {
+		width:90%;
+	}
+}
+
+h1, h2, h3 {
+	margin-top:0;
+	@include rem(margin-bottom, 16px);
+	font-family:"antartidard_esslight", sans-serif;
+}
+.with-border {
+	@include rem(padding-bottom, 13px);
+	border-bottom:2px solid #badce6;
+	@include rem(margin-bottom, 40px);
+}
+p {
+	margin:0;
+}
+.logo-strapline {
+	@include rem(font-size, 16px);
+	@include rem(margin, 0 30px 30px 30px);
+	text-align:center;
+}
+a {
+	color:$brand-one;
+	text-decoration:none;
+	@include transition(all .3s ease-out);
+	&:hover {
+		@include transition(all .3s ease-in-out);
+	}
+	&.anchor {
+		color:$brand-three;
+		&:hover {
+			color:$brand-one;
+		}
+	}
+}
+address {
+	font-style:normal;
+}
+#content {
+	color:$brand-three;
+	h1 {
+		margin-bottom:5px;
+	}
+}
+
+.background {
+	float:left;
+	width:100%;
+	@include bp(desktop) {
+		padding-bottom:352px;
+	}
+	&--grey {
+		background:$brand-five;
+	}
+	&--blue {
+		color:#fff;
+		background:$brand-one;
+		@include rem(padding, 60px 0 30px 0);
+		@include bp(desktop) {
+			padding-bottom:352px;
+		}
+	}
+	&--into-panel {
+		@include rem(padding, 60px 0 30px 0);
+		@include bp(desktop) {
+			padding-bottom:352px;
+			@include rem(margin-top, 109px);
+		}	
+	}
+	&--screen-height {
+		min-height: calc(100vh - 308px);
+		@include bp(desktop) {
+			@include rem(margin-top, 109px);
+		}
+	}
+	&--no-padding-bottom {
+		@include bp(desktop) {
+			padding-bottom:8px;
+		}
+	}
+	&--our-experts {
+		@include bp(desktop) {
+			padding-bottom:8px;
+			@include rem(padding-bottom, 60px);
+		}
+	}
+}
+.home .background {
+	padding-bottom:0;
+}
+.border-right-white {
+	@include bp(desktop) {
+		@include rem(padding-right, 60px);
+		border-right:2px solid #fff;
+	}
+}
+
+.menu-with-divider {
+	float:right;
+	@include remove-default-list-style;
+	li {
+		float:left;
+		@include rem(font-size, 12px);
+		a {
+			position:relative;
+			color:$brand-three;
+			@include rem(padding, 0 5px 0 5px);
+			text-align:left;
+			&::after {
+				position:absolute;
+				right:0;
+				top:20%;
+				bottom:20%;
+				border-right:1px solid #fff;
+				content:"";
+			}
+			&:hover {
+				color:$brand-one;
+			}
+		}
+		&:last-child a {
+			padding-right:0;
+			&::after {
+				border:none;
+			}
+		}
+	}
+}
+
+.full-screen-height {
+	position:relative;
+	width:100%;
+	@include rem(padding, 30px 0 5px 0);
+	background:$brand-five;
+	@include bp(tablet) {
+		min-height: calc(100vh);
+		@include rem(padding, 195px 0 100px 0);
+		/*vertical-align: top;
+		@include display(inline-flex); 
+		@include box-pack(center);
+		@include justify-content(center);
+		@include align-items(top);
+		@include box-orient(vertical);
+		padding:0;*/
+	}
+}
+.down-arrow {
+	width:100%;
+	text-align:center;
+	@include bp(tablet) {
+		position:absolute;
+		left:0;
+		bottom:0;
+	}
+	p {
+		margin:0;
+		color:$brand-two;
+		@include rem(font-size, 15px);
+		@include rem(margin-bottom, 16px);
+	}
+	svg {
+		@include rem(margin-bottom, 30px);
+	}
+}
+.page-template-template-quiz .down-arrow {
+	display:none;
+}
+
+section {
+	h2 {
+		color:$brand-one;
+		@include rem(font-size, 38px);
+		&.title-with-underline {
+			@include rem(padding-bottom, 10px);
+			border-bottom: 2px solid #dfdfdf;
+			@include rem(margin-bottom, 25px);
+			&--white {
+				color:#fff;
+			}
+		}
+	}
+	p {
+		@include rem(font-size,16px);
+		@include rem(line-height, 22px);
+		@include rem(margin-bottom, 16px);
+	}
+	ul {
+		clear:left;
+		@include remove-default-list-style;
+		@include rem(margin-top, 10px);
+		@include rem(margin-left, 20px);
+		li {
+			position:relative;
+			color:$brand-one;
+			@include rem(font-size,15px);
+			@include rem(line-height, 21px);
+			@include rem(margin-bottom, 15px);
+			&:before {
+				position:absolute;
+				top:2px;
+				left:-20px;
+				content:'\2713';
+				@include rem(font-size, 18px);
+				display:inline-block;
+				padding:0 6px 0 0;
+			}
+		}
+	}
+	ht {
+		border-color:#f00;
+	}
+	&.feature-column-text {
+		@include rem(padding-right, 45px);
+		p {
+			color:$brand-one;
+			@include rem(font-size,22px);
+			@include rem(line-height, 30px);
+			font-family:"antartidard_esslight", sans-serif;
+		}
+		.content-video {
+			@include rem(margin-top, 20px);
+			.page-box p.page-box--video__title {
+				color:#fff;
+				@include rem(font-size,24px);
+			}
+		}
+	}
+	
+}
+section.column-template {
+	@include inline-block;
+	h2 {
+		@include rem(font-size, 24px);
+		@include rem(margin-top, 0px);
+	}
+}
+.page-template-template-page-overview section.text-with-graphic-boxes-over-top {
+	@include bp(desktop) {
+		@include rem(padding-bottom,170px);
+	}
+}
+.blog-sidebar {
+	text-align:right;
+	@include bp(desktop) {
+	
+		@include rem(margin-top, 4px);
+	}
+	p {
+		@include rem(font-size, 14px);
+		@include rem(margin-bottom,30px);
+	}
+}
+
+

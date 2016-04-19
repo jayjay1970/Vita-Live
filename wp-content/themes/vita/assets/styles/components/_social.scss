@@ -1,0 +1,37 @@
+.social {
+	position:relative;
+	@include remove-default-list-style;
+	@include bp(tablet) {
+		float:right;
+	}
+	&__item {
+		display:inline-block;
+		@include rem(margin-left, 8px);
+	}
+	&__link {
+		float:left;
+	}
+}
+.social__item:first-child {
+	margin-left:0;
+}
+
+footer .social {
+	float:left;
+	@include rem(margin, 10px 0 0 0);
+	&__item {
+		margin-left:0;
+		@include rem(margin-right, 20px);
+	}
+	&__item:fist-child {
+		margin-left:0;
+	}
+	svg {
+		height:12px;
+	}
+	svg path,
+	svg ellipse,
+	svg rect {
+		fill:#707070;
+	}
+}

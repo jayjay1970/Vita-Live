@@ -1,0 +1,89 @@
+footer {
+	/*@include rem(margin-top, 30px);*/
+	@include rem(padding, 0 0 30px 0);
+	background:$brand-seven;
+	@include bp(desktop) {
+		/*position:absolute;
+		bottom:0;
+		left:0;
+		width:100%;*/
+	}
+	address {
+		position:relative;
+		font-style:normal;
+		font-weight:500;
+		text-align:right;
+		@include rem(font-size, 14px);
+		@include rem(padding, 15px 0);
+		@include rem(margin-bottom, 15px);	
+		&:before {
+			content:"";
+			position:absolute;
+			width:10px;
+			height:2px;
+			bottom: 0;
+			right:0;
+			border-bottom: 2px solid $brand-three;
+		}
+	}
+}
+.links-bullet {
+	a {
+		color:$brand-three;
+		@include rem(font-size, 14px);
+		&:hover {
+			color:$brand-one;
+		}
+	}
+	span {
+		@include rem(padding, 0 5px);
+		@include rem(font-size, 10px);
+		&:last-of-type {
+			display:none;
+		}
+	}
+	
+}
+.inline-images {
+	@include remove-default-list-style;
+	@include inline-block;
+	@include rem(margin-top, 30px);
+	text-align:center;
+	@include rem(padding-bottom, 25px);
+	border-bottom:2px solid #e5e5e5;
+	display:none;
+	visibility:hidden;
+	@include bp(tablet) {
+		@include inline-block;
+		visibility:visible;
+	}
+	li {
+		display:inline;
+		min-height:55px;
+		vertical-align: middle;
+		@include display(inline-flex); 
+		@include box-pack(center);
+		@include justify-content(center);
+		@include align-items(center);
+		@include box-orient(vertical);
+		@include rem(margin-right, 40px);
+		&:last-child {
+			margin-right:0;
+		}
+	}
+}
+.inline-images-in-box {
+	li {
+		width:40%;
+	}
+}
+.small-print {
+	clear:left;
+	text-align:center;
+	@include rem(font-size, 11px);
+	@include rem(margin, 20px 0);
+}
+p.copy {
+	float:left;
+	@include rem(font-size, 12px);
+}

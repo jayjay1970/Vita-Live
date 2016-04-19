@@ -1,0 +1,31 @@
+.search-form {
+	float:right;
+	@include rem(margin, 9px 20px 0 0);
+	color:$brand-four;
+	width:100px;
+	display:none;
+	visibility:hidden;
+	@include bp(tablet) {
+		display:block;
+		visibility:visible;
+	}
+	form {
+		margin:0;
+	}
+	input {
+		position:relative;
+		top:-4px;
+		text-align:right;
+		@include rem(padding, 4px 5px 3px 5px);
+		background:none;
+		font-family: 'Nunito', sans-serif;
+		margin:0;
+		&:focus {
+			color:#fff;
+			background:$brand-four;
+		}
+		@include placeholder {
+			color:$brand-three;
+		}
+	}
+}

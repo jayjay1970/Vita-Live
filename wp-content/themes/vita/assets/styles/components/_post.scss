@@ -1,0 +1,43 @@
+.post {
+	position:relative;
+	@include rem(margin-bottom, 25px);
+	@include rem(padding-bottom, 25px);
+	&:before {
+		content:"";
+		position:absolute;
+		width:calc(100% - 30px);
+		height:2px;
+		bottom: 0;
+		left:30px;
+		border-bottom: 2px solid #dfdfdf;
+	}
+	&:last-of-type:before {
+		border:none;
+	}
+	&__link {
+		@include inline-block;
+		color:$brand-three;
+	}
+	&__image {
+		display:block;
+		@include rem(margin-top, 5px);
+		@include rem(margin-bottom, 20px);
+		@include bp(tablet) {
+			/*width:40%;*/
+		}
+	}
+	&__title {
+		color:$brand-one;
+		@include rem(font-size, 28px);
+		@include rem(line-height, 34px);
+	}
+	&__excerpt {
+		@include rem(margin-bottom, 10px);
+	}
+}
+.search-results .post {
+	&:before {
+		width:100%;
+		left:0;
+	}
+}

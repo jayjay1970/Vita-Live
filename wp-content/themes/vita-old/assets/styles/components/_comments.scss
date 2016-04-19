@@ -1,0 +1,93 @@
+h2.comments-title {
+	display:inline-block;
+	@include rem(margin-bottom, 30px);
+}
+h3#comments,
+#respond h3 {
+	@include rem(font-size, 25px);
+	@include rem(margin-bottom, 10px);
+}
+.comment-form {
+	margin-top:0;
+	label {
+		display:none;
+	}
+	input {
+		margin-bottom:0;
+	}
+}
+.comments-container {
+	@include inline-block;
+	border-top:3px solid #e5e5e5;
+	@include rem(padding-top, 15px);
+}
+.commentlist {
+	padding-left:0;
+	list-style-type:none;
+}
+.comment-meta {
+	background:none;
+	padding-bottom:0;
+}
+.comment-metadata {
+	@include rem(font-size, 14px);
+	@include rem(margin-left, 52px);
+}
+.comment-awaiting-moderation {
+	@include rem(font-size, 16px);
+	@include rem(margin-left, 52px);
+	@include rem(margin-top, 10px);
+	color:$brand-two;
+}
+.edit-link a,
+.comment-reply-link {
+	position:relative;
+	top:-35px;
+	float:right;
+	color:#fff;
+	@include rem(font-size, 15px);
+	background:$brand-one;
+	border-radius:5px;
+	@include rem(padding, 6px 15px  4px 15px);
+	@include rem(margin-top, 3px);
+	cursor:pointer;
+}
+.comment-reply-link {
+	float:left;
+	top:0;
+	@include rem(margin-left, 52px);
+	@include rem(margin-top, 20px);
+}
+.comment-author {
+	@include rem(font-size, 18px);
+	vertical-align: middle;
+	display:inline-flex;
+	box-pack:center;
+	justify-content:center;
+	align-items:center;
+	box-orient:center;
+	.fn {
+		display:inline-block;
+		@include rem(margin-right, 8px);
+		text-transform:capitalize;
+	}
+}
+.avatar {
+	@include rem(margin-right, 20px);
+}
+.comment-content {
+	@include rem(margin-left, 52px);
+}
+.comment-body {
+	@include inline-block;
+	@include rem(padding, 18px 15px  18px 15px);
+	background:#fafafa;
+	border:1px solid $brand-one;
+	border-radius:10px;
+	@include rem(margin-bottom, 20px);
+}
+#respond {
+	clear:left;
+	@include inline-block;
+	@include rem(margin-top, 10px);
+}

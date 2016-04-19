@@ -1,0 +1,154 @@
+/*
+ * Mixin for easy media queries
+ * @include bp(tablet) { SCSS here };
+*/
+@mixin bp($point) {
+	@if $point == desktoplarger {
+		@media (min-width : 1920px) { @content; }
+	}
+	@if $point == desktoplarge {
+		@media (min-width : 1200px) { @content; }
+	}
+	@if $point == desktopmed {
+		@media (min-width: 1300px) and (min-height: 600px) { @content; }
+	}
+	@if $point == desktop {
+		@media (min-width : 960px) { @content; }
+	}
+	@if $point == tablet {
+		@media (min-width : 768px) { @content; }
+	}
+	@else if $point == phone {
+		@media (min-width : 400px) { @content; }
+	}
+}
+
+/*
+ * Mixin to converrt PX to REM https://github.com/pierreburel/sass-rem
+ *  @include rem(font-size, 24px);
+ *  @include rem(border-bottom, 1px solid black);
+*/
+$rem-baseline: 16px !default;
+$rem-fallback: true !default;
+$rem-px-only: false !default;
+
+// list-separator polyfill by Hugo Giraudel (https://sass-compatibility.github.io/#list_separator_function)
+@function rem-separator($list) {
+  @if function-exists("list-separator") == true {
+    @return list-separator($list);
+  }
+
+  $test-list: ();
+  @each $item in $list {
+    $test-list: append($test-list, $item, space);
+  }
+
+  @return if($test-list == $list, space, comma);
+}
+
+@mixin rem-baseline($zoom: 100%) {
+  font-size: $zoom / 16px * $rem-baseline;
+}
+
+@function rem-convert($to, $values...) {
+  $result: ();
+  $separator: rem-separator($values);
+
+  @each $value in $values {
+    @if type-of($value) == "number" and unit($value) == "rem" and $to == "px" {
+      $result: append($result, $value / 1rem * $rem-baseline, $separator);
+    } @else if type-of($value) == "number" and unit($value) == "px" and $to == "rem" {
+      $result: append($result, $value / ($rem-baseline / 1rem), $separator);
+    } @else if type-of($value) == "list" {
+      $result: append($result, rem-convert($to, $value...), $separator);
+    } @else {
+      $result: append($result, $value, $separator);
+    }
+  }
+
+  @return if(length($result) == 1, nth($result, 1), $result);
+}
+
+@function rem($values...) {
+  @if $rem-px-only {
+    @return rem-convert(px, $values...);
+  } @else {
+    @return rem-convert(rem, $values...);
+  }
+}
+
+@mixin rem($properties, $values...) {
+  @if type-of($properties) == "map" {
+    @each $property in map-keys($properties) {
+      @include rem($property, map-get($properties, $property));
+    }
+  } @else {
+    @each $property in $properties {
+      @if $rem-fallback or $rem-px-only {
+        #{$property}: rem-convert(px, $values...);
+      }
+      @if not $rem-px-only {
+        #{$property}: rem-convert(rem, $values...);
+      }
+    }
+  }
+}
+
+
+
+
+/*
+ * Mixin for fonf size and line-height
+ * @include font-size(16);
+*/
+$doc-font-size:16;
+$doc-line-height:22;
+
+@mixin font-size($size) {
+      font-size: 0px + $size;
+      font-size: 0rem + $size / $doc-font-size;
+      line-height: ceil($size / $doc-line-height) * ($doc-line-height / $size);
+      margin-bottom: 0px + $doc-line-height;
+      margin-bottom: ($doc-line-height / $doc-font-size) +rem;
+}
+
+/*
+* Mixin for SVG with PNG Fallback	
+* Here we can pass parameters: name, extension, color, position, repeat
+* with this example we will just repeat the graphic
+* @include svg-bg('graphic-name', $repeat: repeat);
+*/
+  
+@mixin svg-bg($name, $extension: png, $color: transparent, $position: 0 0, $repeat: no-repeat) {
+	background: url(../../assets/images/#{$name}.#{$extension}) $color $position $repeat;
+	background: none, url(../../assets/images/#{$name}.svg) $color $position $repeat;
+}
+
+/*
+ * Mixin for removing list bullet styles
+ * @include remove-default-list-style;
+*/
+@mixin remove-default-list-style {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
+/*
+ * Mixin for micro clearfix
+ * @include microclearfix;
+*/
+@mixin microclearfix {
+	&:before, &:after { content: ""; display: table; }
+	&:after { clear: both; }
+	*zoom: 1;
+}
+
+/*
+ * Mixin for micro clearfix
+ * @include inline-block;
+*/
+@mixin inline-block {
+	width:100%;
+	display:inline-block;
+}

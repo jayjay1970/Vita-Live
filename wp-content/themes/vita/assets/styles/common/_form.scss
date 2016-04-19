@@ -1,0 +1,247 @@
+form {
+	@include rem(margin-top, 20px);
+}
+input {
+	@include appearance(none);
+	@include inline-block;
+	border:1px solid #fff;
+	@include rem(padding, 6px 10px 4px 10px);
+	border-radius:5px;
+	color:#fff;
+	@include rem(font-size, 15px);
+	@include rem(margin-bottom, 10px);
+	background:$brand-one;
+	font-family: 'Lato', sans-serif;
+	cursor:pointer;
+	@include placeholder {
+		color:#fff;
+		opacity:1;
+	}
+	&:focus {
+		outline: none;
+	}
+}
+input[type=checkbox] {
+	width:auto;
+	float:left;
+}
+select {
+	@include appearance(none);
+	width:100%;
+	border:1px solid #fff;
+	border-radius:5px;
+	@include rem(padding, 6px 10px 4px 10px);
+	@include rem(margin-bottom, 10px);
+	@include rem(font-size, 15px);
+	color:#fff;
+	background:$brand-one;
+	font-family: 'Lato', sans-serif;
+	option {
+		@include rem(padding, 2px 5px);
+		color:$brand-one;
+		background:#fff;
+	}
+}
+textarea {
+	@extend input;
+	height:206px;
+	@include rem(margin-bottom, 20px);
+}
+input[type=submit] {
+	float:right;
+	width:auto;
+	&:hover {
+		background:darken( $brand-two, 10%);
+		border-color:darken( $brand-two, 10%);
+	}
+}
+
+span.wpcf7-list-item {
+	display:inline-block;
+	margin-left:0;
+	@include rem(margin-bottom, 4px);
+}
+span.wpcf7-list-item-label {
+	position:relative;
+	top:1px;
+	color:#fff;
+	@include rem(font-size, 14px);
+	@include rem(margin-right, 10px);
+}
+
+body span.wpcf7-not-valid-tip {
+	display:block;
+	color:$brand-three;
+	@include rem(font-size, 14px);
+	@include rem(margin, 8px 0 0 0);
+}
+body .pop-up-download-form span.wpcf7-not-valid-tip {
+	margin-top:10px;
+}
+
+form.invalid input.wpcf7-not-valid { 
+	color:$error;
+	display:block;
+	border:2px solid $error;
+	background:lighten( $error, 40% );
+	border-radius:8px;
+	@include rem(margin, 5px 0 10px 0);
+	margin-bottom:0;
+}
+form.invalid span.wpcf7-not-valid-tip {
+	color:$error;
+	@include inline-block;
+	@include rem(margin, 10px 0 0 0); 
+}
+.contact form.invalid span.wpcf7-not-valid-tip {
+	color:#000;
+	@include rem(margin, 10px 0 20px 0); 
+}
+.pop-up-download-form form.invalid input.wpcf7-not-valid {
+	margin-top:0;
+}
+body div.wpcf7-validation-errors {
+	background: #ffe2e2;
+	border:2px solid $error;
+	border-radius:8px;
+	@include rem(padding, 8px 20px);
+	color:$error;
+	@include rem(font-size, 14px);
+	@include rem(margin,20px 0 30px 0);
+}
+body .pop-up-download-form div.wpcf7-validation-errors {
+	margin-top:0;
+}
+body .wpcf7-mail-sent-ok {
+	background-color:none;
+	@include rem(font-size, 14px);
+	border:2px solid $brand-two;
+	@include rem(padding, 8px 20px);
+	color: $brand-two;
+	background:#fff;
+	border-radius:8px;
+	@include rem(margin, 20px 0 0 0);
+}
+body .pop-up-download-form .wpcf7-mail-sent-ok {
+	margin-top:0;
+}
+
+.mc4wp-form {
+	margin-bottom:0;
+	input {
+		border-radius:0;
+		background:none;
+		border-colour:$brand-five;
+		@include placeholder {
+			opacity:0.8;
+		}
+	}
+	input[type=submit] {
+		float:left;
+		background:$brand-one;
+		border:none;
+		@include rem(margin-top, 8px);
+		margin-bottom:0;
+	}
+}
+.mc4wp-alert {
+	@include rem(font-size, 14px);
+	@include rem(margin-top, 8px);
+	border-radius:0;
+	border:1px solid $error;
+}
+
+
+.custom-checkbox {
+	position:relative;
+	width:100%;
+	line-height: 35px;
+	@include rem(margin-bottom, 10px);
+	span.wpcf7-list-item {
+		position:relative;
+		width:49%;
+		margin-right:2%;
+		@include rem(margin-bottom, 8px);
+		&:nth-of-type(even) {
+			margin-right:0;
+		}
+	}
+	.wpcf7-list-item-label {
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		display:block;
+		text-align:center;
+		border-radius:5px;
+		@include rem(font-size, 16px);
+		background:$brand-one;
+		cursor:pointer;
+	}
+	input[type="checkbox"]:checked + .wpcf7-list-item-label {
+		background:$brand-three;
+	}
+}
+label {
+	cursor:pointer;
+	display:block;
+	@include rem(margin-top,5px);
+	@include rem(margin-bottom, 8px);
+}
+input[type="checkbox"] {
+	/*visibility:hidden;*/	
+}
+.get-a-quote-form {
+	input {
+		color:$brand-one;
+		background:none;
+		border-color:$brand-one;
+		cursor:auto;
+	}
+	input[type=submit] {
+		color:#fff;
+		background:$brand-two;
+		border:none;
+	}
+}
+
+
+/*.custom-checkbox {
+	position:relative;
+	width:50%;
+	line-height: 35px;	
+}
+label {
+	cursor:pointer;
+	color: #555;
+	text-align:center;
+}
+input[type="checkbox"] {
+	visibility:hidden;	
+}
+input[type="checkbox"] + label span {
+	width:50%;
+	height: 35px;
+	line-height:35px;
+	display: inline-block;
+}
+.text-over-checkbox {
+	position:absolute;
+	top:0;
+	left:0;
+	color:#fff;
+	width:100%;
+}
+input[type="checkbox"] + label span {
+	width:100%;
+	display:block;
+	border-radius:5px;
+	background:$brand-one;
+}
+
+input[type="checkbox"]:checked + label span {
+	background:$brand-three;
+}*/
+
+
+
