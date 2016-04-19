@@ -159,11 +159,12 @@
 					$twitter = new create_twitter();
 					$twitter->screen_name = "vitainsure";
 					$twitter->not = 1;
-					$twitter->consumerkey = "BXMLB7HWiRdByK7GGE1aAjdoK";
-					$twitter->consumersecret = "FqIDMQMD6gaY1FsLQKixCTEYfosDksA1hHYUpMvpmYZIrfoW0X";
+					$twitter->consumerkey = "XhMO2LQYnTSuxNqiU3q1gehVU";
+					$twitter->consumersecret = "eyNXV7yVYic46wPiSDqywSXLCt0MLYkIq1rNAak5RGRIEwBsJQ";
+
 					$twitter->accesstoken = "4404377009-ZyTsrBAq9wxsakt0e2QJcCwrCX3v6ZVhx3fOPn4";
 					$twitter->accesstokensecret = "wJA6FejuvNw2hDiUa3sY4u2MfbpvG31eafld990cGAQh9";
-					//$twitter->cachefile = $_SERVER['DOCUMENT_ROOT']."/twitter/twitter.txt";
+					$twitter->cachefile = $_SERVER['DOCUMENT_ROOT']."/twitter/twitter.txt";
 					$twitter->tags = true;
 					$twitter->tags = true;
 					$twitter->nofollow = true; 
